@@ -50,7 +50,7 @@ output:
 
 ```python
 s3_list = s3.list_files()
-print(s3_list[:5], "\n...\n", s3_list[-5:])
+print(s3_list)
 ```
 
 output:
@@ -150,7 +150,6 @@ s3.write_csv(file_name="assets/test/test_write.csv.bz2", file_content=test_write
 
 ```python
 # Read the saved file (read_csv)
-print(s3.read_csv.__doc__, end="\n====================\n")
 pd.concat([
     s3.read_csv(file_name="assets/test/test_write.csv", encoding="utf-8").rename(columns={"test": "Basic format"}),
     # Read compressed files in gzip or bzip2 format
@@ -211,7 +210,6 @@ output:
 
 ```python
 # Download the saved file locally (download_file)
-print(s3.download_file.__doc__, end="\n====================\n")
 load_path = os.getcwd()
 s3.download_file(file_name="assets/test/test_write.csv", load_path=load_path+"/test_write.csv")
 s3.download_file(file_name="assets/test/test_write.csv.gz", load_path=load_path+"/test_write.csv.gz")
@@ -220,7 +218,6 @@ s3.download_file(file_name="assets/test/test_write.csv.bz2", load_path=load_path
 
 ```python
 # Delete a file on s3 (delete_file)
-print(s3.delete_file.__doc__, end="\n====================\n")
 print(f"List of files before deletion: {s3.find_files(prefix='assets/test/')}")
 s3.delete_file(file_name="assets/test/test_write.csv")
 s3.delete_file(file_name="assets/test/test_write.csv.gz")
@@ -239,7 +236,6 @@ output:
 
 ```python
 # Upload a file stored locally (upload_file)
-print(s3.upload_file.__doc__, end="\n====================\n")
 print(f"List of files before upload: {s3.find_files(prefix='assets/test/')}")
 s3.upload_file(file_name="assets/test/test_write.csv", file_path=load_path+"/test_write.csv")
 s3.upload_file(file_name="assets/test/test_write.csv.gz", file_path=load_path+"/test_write.csv.gz")

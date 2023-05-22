@@ -1,5 +1,6 @@
-## Installation
+# Python package for facilitating data management and CRUD in AWS S3
 
+## Installation
 `pip install s3namic`
 
 ---

@@ -1,4 +1,4 @@
-from core.s3namic import (
+from s3namic.core import (
     s3namic, 
 )
 

@@ -12,7 +12,7 @@ from s3namic import s3namic
 s3 = s3namic(
   bucket="bucket_name",
   access_key="access_key",
-  secret_key="secrey_key",
+  secret_key="secret_key",
   region="region",
 )
 ```
@@ -56,7 +56,7 @@ print(s3_list)
 output:
 
 ```python
-['first_file.json', 'second_file.json', ... ]
+['assets/json/first_file.json', 'assets/json/second_file.json', ... ]
 ```
 
 ### Find a specific file in s3
@@ -64,7 +64,7 @@ output:
 - ### find_file
 
 ```python
-test_path = s3.find_file(file_name="2021-12-31", str_contains=True)
+test_path = s3.find_file(file_name="2023-04-30", str_contains=True)
 print(f"2023-04-30 File path containing filename: '{test_path}'")
 ```
 

@@ -305,7 +305,7 @@ os.remove(load_path+"/test_write.csv.bz2")
 </div>
 
 ```python
-auto_path = s3.find_file(file_name="2022-12", str_contains=True)  # File path with filename containing 2022-12
+auto_path = s3.find_file(file_name="2023-04-30", str_contains=True)  # File path with filename containing 2022-12
 print(f"File path with filename containing 2023-04-30: {auto_path}")
 # Just put the folder path as prefix
 folder_path = auto_path[:auto_path.rfind('/')] + '/'
